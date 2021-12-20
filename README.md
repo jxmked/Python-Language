@@ -3,4 +3,4 @@ I create some scripts to help my development for multiple projects and for demon
 
 
 # Page
-- [Python Script] (https://jxmked.github.io/Python-Language/) 
+- [Python Script](https://jxmked.github.io/Python-Language/) 
