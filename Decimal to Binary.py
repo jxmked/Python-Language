@@ -80,9 +80,9 @@ def printTable(arr):
 	for i in range(0, len(arr["Bits"])):
 		txt += str(arr["Bits"][i]) + " = " + str(arr["Binary"][i]) + "\n"
 
-#	print("\nTable:")
-#	print(txt)
-#	print("Power Of 2:", arr["Bits"])
+	print("\nTable:")
+	print(txt)
+	print("Power Of 2:", arr["Bits"])
 	print("Binary:", arr["Binary"])
 
 
