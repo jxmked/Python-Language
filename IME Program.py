@@ -1,6 +1,6 @@
 import os
 
-border = "*~*-*~*-*~*-*~*-*~*-*~*-*~*-*~*"
+border = "========================="
 
 def Confirm(s):
     while True:
@@ -21,11 +21,11 @@ def clrscr():
     os.system("clear")
 
 def displayMenu(arr):
-    l = len(arr)
-    
+    num = len(arr)
+    border = "*~*-*~*-*~*-*~*-*~*-*~*-*~*-*~*"
     print(border)
     
-    for i in range(0, l):
+    for i in range(0, num):
         print("{}. {}".format(i + 1, arr[i]))
         
     print(border)
@@ -37,10 +37,10 @@ def displayMenu(arr):
             continue
         
         try:
-            res = int(ans)
+            ans = int(ans)
             
-            if res < l and res > 0:
-                return res
+            if ans < num and ans > 0:
+                return ans
         except:
             pass
 
@@ -51,16 +51,16 @@ def Scale(question, n, x):
     print(question)
     
     while True:
-        res = input("Number {}-{}: ".format(n, x))
+        ans = input("Number {}-{}: ".format(n, x))
         
-        if len(res) == 0:
+        if len(ans) == 0:
             continue
         
         try:
-            res = int(res)
+            ans = int(ans)
             
-            if res >= n and res <= x:
-                return res
+            if ans >= n and ans <= x:
+                return ans
         except:
             pass
 
@@ -77,12 +77,13 @@ def Main():
     
     if Confirm("Do you want to continue?"):
         clrscr()
+        print(border)
         print("Did you know that Mental Health includes our emotional, psychological, and social well-being.")
         print("It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices.")
         print("Mental health is important at every stage of life, from childhood and adolescence through adulthood.")
+        print(border)
         
         FirstPage()
-        # Next Function
     else:
         clrscr()
         print("\nThank you for visiting IME program!" )
@@ -95,16 +96,16 @@ def FirstPage():
         clrscr()
         print("Select Mental Health Assessment")
         
-        selections = [
+        ans = displayMenu([
             "Stress Assessment",
             "Depression Assessment",
             "Anxiety Assessment",
             "Back"
-        ]
-        
-        ans = displayMenu(selections)
+        ])
         
         if ans == 1: # Stress Assessment
+            clrscr()
+            
             if Confirm("Feeling unoveewhelmed, unmotivated or unfocused?"):
                 StressAssessment()
             else:
@@ -123,8 +124,8 @@ def FirstPage():
 def StressAssessment():
     clrscr()
     
-    print("Rate the following qustions by using this option.")
-    print("\n0 = Not at all")
+    print("Rate the following qustions by using this option.\n")
+    print("0 = Not at all")
     print("1 = Several Day")
     print("2 = More than half days")
     print("3 = Nearly Everyday")
