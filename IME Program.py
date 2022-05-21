@@ -4,13 +4,18 @@ border = "========================="
 
 def Confirm(s):
     while True:
+        # While User Keeps Entering Invalid Input
+        # Keep Asking The User Until we Get the expected Input
         x = input("\n{} [Y/n]: ".format(s))
         
+        # Check if user entered something
         if len(x) == 0:
             continue
         
+        # Get the first Character from string
         x = x[0]
         
+        # Check if User Input Met our Condition
         if x == "y" or x == "Y":
             return True
         
@@ -21,27 +26,39 @@ def clrscr():
     os.system("clear")
 
 def displayMenu(arr):
-    num = len(arr)
+    num = len(arr) # Length of an Array
+    
     border = "*~*-*~*-*~*-*~*-*~*-*~*-*~*-*~*"
+    
     print(border)
     
+    # Print each Value From Array after a Number
     for i in range(0, num):
+        # This line is Equivalent to `printf("%d. %s", i + 1, arr[i])` in C language
         print("{}. {}".format(i + 1, arr[i]))
         
     print(border)
     
     while True:
+        # While User Keeps Entering Invalid Input
+        # Keep Asking The User Until we Get the expected Input
+        
         ans = input("Which number: ")
         
+        # Check if user entered something
         if len(ans) == 0:
             continue
         
-        try:
+        try: 
+            # Since `int` functiin will `raise` (call) an error by passing an invalid character
+            # We can handle it by using `try-except` method
             ans = int(ans)
             
+            # Check if User Input Met our Condition
             if ans < num and ans > 0:
                 return ans
         except:
+            # `pass` means "No operation".
             pass
 
 def Scale(question, n, x):
@@ -51,17 +68,26 @@ def Scale(question, n, x):
     print(question)
     
     while True:
+        # While User Keeps Entering Invalid Input
+        # Keep Asking The User Until we Get the expected Input
+        
+        # This line is Equivalent to `printf("Number %d-%d", n, x)` in C language
         ans = input("Number {}-{}: ".format(n, x))
         
+        # Check if user entered something
         if len(ans) == 0:
             continue
         
         try:
+            # Since `int` functiin will `raise` (call) an error by passing an invalid character
+            # We can handle it by using `try-except` method
             ans = int(ans)
             
+            # Check if User Input Met our Condition
             if ans >= n and ans <= x:
                 return ans
         except:
+            # `pass` means "No operation".
             pass
 
 # Start Here
@@ -90,7 +116,6 @@ def Main():
         exit(0)
 
 def FirstPage():
-    
     if Confirm("Do you want to test yourself?"):
         # Want to test
         clrscr()
@@ -109,12 +134,15 @@ def FirstPage():
             if Confirm("Feeling unoveewhelmed, unmotivated or unfocused?"):
                 StressAssessment()
             else:
+                # `pass` means "No operation".
                 pass
         
         if ans == 2: # Depression Assessment
+            # `pass` means "No operation".
             pass
         
         if ans == 3: # Anxiety Assessment
+            # `pass` means "No operation".
             pass 
         
         if ans == 4: # Back
