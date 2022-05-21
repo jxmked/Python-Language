@@ -174,8 +174,10 @@ def StressAssessment():
     
     result = 0
     
+    # Iterate each question and get the rated answer fron user
     for i in range(0, len(questions)):
         print("")
+        # This line is Equivalent to `printf("%d. %s", i + 1, questions[i])` in C language
         result += Scale("{}. {}".format(i + 1, questions[i]), 0, 3)
      
     print(border, "\n", result)
