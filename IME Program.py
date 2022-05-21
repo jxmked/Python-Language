@@ -3,7 +3,6 @@ import os
 border = "*~*-*~*-*~*-*~*-*~*-*~*-*~*-*~*"
 
 def Confirm(s):
-    r = ""
     while True:
         x = input("\n{} [Y/n]: ".format(s))
         
@@ -31,7 +30,6 @@ def displayMenu(arr):
         
     print(border)
     
-    ans = ""
     while True:
         ans = input("Which number: ")
         
@@ -90,7 +88,6 @@ def Main():
         print("\nThank you for visiting IME program!" )
         exit(0)
 
-
 def FirstPage():
     
     if Confirm("Do you want to test yourself?"):
@@ -106,7 +103,6 @@ def FirstPage():
         ]
         
         ans = displayMenu(selections)
-        
         
         if ans == 1: # Stress Assessment
             if Confirm("Feeling unoveewhelmed, unmotivated or unfocused?"):
@@ -135,7 +131,7 @@ def StressAssessment():
     print(border)
     
     questions = [
-        "Feeling unoverwhelmed, unmotivated, or unfocused",
+        "Feeling unoverwhelmed, unmotivated or unfocused",
         "Trouble sleeping or sleeping too much",
         "Racing thoughts or constant worry",
         "Problems with your memory or concentration",
