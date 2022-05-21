@@ -152,9 +152,9 @@ def StressAssessment():
     for i in range(0, len(questions)):
         print("")
         result += Scale("{}. {}".format(i + 1, questions[i]), 0, 3)
-       
      
     print(border, "\n", result)
+    
     if result <= 6 :
         print("Normal or No Problem with Stress")
         
