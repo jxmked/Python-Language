@@ -10,6 +10,7 @@ def Confirm(s):
         
         # Check if user entered something
         if len(x) == 0:
+            # If none then re-run the loop without going further
             continue
         
         # Get the first Character from string
@@ -47,6 +48,7 @@ def displayMenu(arr):
         
         # Check if user entered something
         if len(ans) == 0:
+            # If none then re-run the loop without going further
             continue
         
         try: 
@@ -76,6 +78,7 @@ def Scale(question, n, x):
         
         # Check if user entered something
         if len(ans) == 0:
+            # If none then re-run the loop without going further
             continue
         
         try:
@@ -131,7 +134,7 @@ def FirstPage():
         if ans == 1: # Stress Assessment
             clrscr()
             
-            if Confirm("Feeling unoveewhelmed, unmotivated or unfocused?"):
+            if Confirm("Feeling unoverwhelmed, unmotivated or unfocused?"):
                 StressAssessment()
             else:
                 # `pass` means "No operation".
