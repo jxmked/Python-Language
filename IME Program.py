@@ -57,7 +57,7 @@ def displayMenu(arr):
             ans = int(ans)
             
             # Check if User Input Met our Condition
-            if ans < num and ans > 0:
+            if ans <= num and ans > 0:
                 return ans
         except:
             # `pass` means "No operation".
@@ -181,7 +181,7 @@ def StressAssessment():
     for i in range(0, len(questions)):
         print("")
         # This line is Equivalent to `printf("%d. %s", i + 1, questions[i])` in C language
-        result += Scale("{}. {}".format(i + 1, questions[i]), 0, 3)
+        result += Scale("{}. {}".format(i, questions[i]), 0, 3)
      
     print(border, "\n", result)
     
@@ -199,4 +199,5 @@ def StressAssessment():
     
 
 # Must be at the bottom
+# To Construct all Function by the system before calling them
 Main()
