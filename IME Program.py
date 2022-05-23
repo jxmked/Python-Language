@@ -2,11 +2,21 @@ import os
 
 border = "========================="
 
+def xInput(param):
+    try:
+        # With terminal, `CTRL + C` will raise a `KeyboardInterrupt` exception
+        # and display an error says `KeyboardInterrupt`
+        # We do handle it to beautify the output instead of showing an error
+        return input(param)
+    except (KeyboardInterrupt):
+        print("\nProgram Terminated")
+        exit(0)
+    
 def Confirm(s):
     while True:
         # While User Keeps Entering Invalid Input
         # Keep Asking The User Until we Get the expected Input
-        x = input("\n{} [Y/n]: ".format(s))
+        x = xInput("\n{} [Y/n]: ".format(s))
         
         # Check if user entered something
         if len(x) == 0:
@@ -44,7 +54,7 @@ def displayMenu(arr):
         # While User Keeps Entering Invalid Input
         # Keep Asking The User Until we Get the expected Input
         
-        ans = input("Which number: ")
+        ans = xInput("Which number: ")
         
         # Check if user entered something
         if len(ans) == 0:
@@ -74,7 +84,7 @@ def Scale(question, n, x):
         # Keep Asking The User Until we Get the expected Input
         
         # This line is Equivalent to `printf("Number %d-%d", n, x)` in C language
-        ans = input("Number {}-{}: ".format(n, x))
+        ans = xInput("Number {}-{}: ".format(n, x))
         
         # Check if user entered something
         if len(ans) == 0:
@@ -151,6 +161,13 @@ def FirstPage():
         if ans == 4: # Back
             Main()
         
+        # Want to test so we don't need to go back to Main
+        # menu after running those program
+        return 0
+    
+    # Don't want to Test
+    # Go Back at the beginning
+    Main()
     
 def StressAssessment():
     clrscr()
@@ -181,9 +198,9 @@ def StressAssessment():
     for i in range(0, len(questions)):
         print("")
         # This line is Equivalent to `printf("%d. %s", i + 1, questions[i])` in C language
-        result += Scale("{}. {}".format(i, questions[i]), 0, 3)
+        result += Scale("{}. {}".format(i + 1, questions[i]), 0, 3)
      
-    print(border, "\n", result)
+    print(border, "\n\n", result)
     
     if result <= 6 :
         print("Normal or No Problem with Stress")
