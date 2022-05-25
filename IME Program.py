@@ -5,7 +5,7 @@ border = "========================="
 def xInput(param):
     try:
         # With terminal, `CTRL + C` will raise a `KeyboardInterrupt` exception
-        # and display an error says `KeyboardInterrupt`
+        # and display an error says `KeyboardInterrupt` and more.
         # We do handle it to beautify the output instead of showing an error
         return input(param)
     except (KeyboardInterrupt):
@@ -62,7 +62,7 @@ def displayMenu(arr):
             continue
         
         try: 
-            # Since `int` functiin will `raise` (call) an error by passing an invalid character
+            # Since `int` function will `raise` (call) an error by passing an invalid character
             # We can handle it by using `try-except` method
             ans = int(ans)
             
@@ -92,7 +92,7 @@ def Scale(question, n, x):
             continue
         
         try:
-            # Since `int` functiin will `raise` (call) an error by passing an invalid character
+            # Since `int` function will `raise` (call) an error by passing an invalid character
             # We can handle it by using `try-except` method
             ans = int(ans)
             
@@ -118,7 +118,8 @@ def Main():
         clrscr()
         print(border)
         print("Did you know that Mental Health includes our emotional, psychological, and social well-being.")
-        print("It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices.")
+        print("It affects how we think, feel, and act.")
+        print("It also helps determine how we handle stress, relate to others, and make choices.")
         print("Mental health is important at every stage of life, from childhood and adolescence through adulthood.")
         print(border)
         
